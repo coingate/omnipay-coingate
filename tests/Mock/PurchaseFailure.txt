@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Server: nginx/1.10.1
+Date: Tue, 30 Aug 2016 11:02:19 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Cache-Control: no-cache
+X-Request-Id: d5c5b0a1-9e30-46c3-9650-492bcbfe5ace
+X-Runtime: 0.004236
+
+{"message": "Order is not valid","reason": "OrderIsNotValid","errors":["Price can't be blank","Price is not a number","Btc amount can't be blank","Btc amount is not a number"]}

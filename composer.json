@@ -1,0 +1,30 @@
+{
+  "name": "coingate/omnipay-coingate",
+  "type": "library",
+  "description": "CoinGate driver for the Omnipay payment processing library",
+  "keywords": [
+    "bitcoin"
+  ],
+  "homepage": "https://github.com/coingate/omnipay-coingate",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "CoinGate",
+      "email": "support@coingate.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": { "Omnipay\\CoinGate\\" : "src/" }
+  },
+  "require": {
+    "omnipay/common": "~2.0"
+  },
+  "require-dev": {
+    "omnipay/tests": "~2.0"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0.x-dev"
+    }
+  }
+}
