@@ -4,6 +4,11 @@ namespace Omnipay\CoinGate;
 
 use Omnipay\Common\AbstractGateway;
 
+/**
+ * CoinGate Gateway
+ *
+ * @link https://developer.coingate.com/
+ */
 class Gateway extends AbstractGateway
 {
   public function getName()
