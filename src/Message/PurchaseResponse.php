@@ -31,13 +31,13 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 
     public function getRedirectData()
     {
-        return null;
+        return;
     }
 
     public function getMessage()
     {
         if (isset($this->data['reason'])) {
-            return $this->data['reason'] . ': ' . $this->data['message'];
+            return $this->data['reason'].': '.$this->data['message'];
         }
     }
 

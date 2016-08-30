@@ -7,7 +7,8 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     protected $liveEndpoint = 'https://coingate.com/api/v1';
     protected $testEndpoint = 'https://sandbox.coingate.com/api/v1';
 
-    public function getAppId() {
+    public function getAppId()
+    {
         return $this->getParameter('appId');
     }
 
@@ -16,7 +17,8 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('appId', $value);
     }
 
-    public function getApiKey() {
+    public function getApiKey()
+    {
         return $this->getParameter('apiKey');
     }
 
@@ -25,7 +27,8 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('apiKey', $value);
     }
 
-    public function getApiSecret() {
+    public function getApiSecret()
+    {
         return $this->getParameter('apiSecret');
     }
 
@@ -34,7 +37,8 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('apiSecret', $value);
     }
 
-    public function getReceiveCurrency() {
+    public function getReceiveCurrency()
+    {
         return $this->getParameter('receiveCurrency');
     }
 
@@ -63,15 +67,16 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return 'POST';
     }
 
-    public function getEndpoint() {
+    public function getEndpoint()
+    {
         return $this->getTestMode() ? $this->testEndpoint : $this->liveEndpoint;
     }
 
     public function sendData($data)
     {
         $body = $data ? http_build_query($data) : null;
-        $nonce = (int)(microtime(true) * 1e6);
-        $message = $nonce . $this->getAppId() . $this->getApiKey();
+        $nonce = (int) (microtime(true) * 1e6);
+        $message = $nonce.$this->getAppId().$this->getApiKey();
         $signature = hash_hmac('sha256', $message, $this->getApiSecret());
 
         $httpRequest = $this->httpClient->createRequest($this->getHttpMethod(), $this->getEndpoint(), null, $body);
@@ -79,8 +84,9 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $httpRequest->setHeader('Access-Nonce', $nonce);
         $httpRequest->setHeader('Access-Signature', $signature);
 
-        if ($this->getHttpMethod() == 'POST')
-        $httpRequest->setHeader('Content-Type', 'application/x-www-form-urlencoded');
+        if ($this->getHttpMethod() == 'POST') {
+            $httpRequest->setHeader('Content-Type', 'application/x-www-form-urlencoded');
+        }
 
         $httpResponse = $httpRequest->send();
 

@@ -11,7 +11,7 @@ class PurchaseStatusRequest extends PurchaseRequest
 
     public function getEndpoint()
     {
-        return parent::getEndpoint() . '/' . $this->getTransactionReference();
+        return parent::getEndpoint().'/'.$this->getTransactionReference();
     }
 
     protected function getHttpMethod()
