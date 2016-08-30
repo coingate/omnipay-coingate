@@ -39,7 +39,11 @@ class PurchaseRequestTest extends TestCase
     {
         $this->setMockHttpResponse('PurchaseSuccess.txt');
 
-        $response = $this->request->send();
+        $request = $this->request;
+
+        $request->setApiSecret('test');
+
+        $response = $request->send();
 
         $this->assertFalse($response->isSuccessful());
         $this->assertTrue($response->isRedirect());
