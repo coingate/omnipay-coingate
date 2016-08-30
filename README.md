@@ -10,14 +10,14 @@
 processing library for PHP 5.3+. This package implements CoinGate support for Omnipay.
 
 ## Installation
- 
+
 Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply add it
 to your `composer.json` file:
 
 ```json
 {
     "require": {
-        "coingate/omnipay-coingate": "~2.0"
+        "coingate/omnipay-coingate": "dev-master"
     }
 }
 ```
