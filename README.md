@@ -36,6 +36,18 @@ The following gateways are provided by this package:
 For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay)
 repository.
 
+### Callback, Success and Cancel URLs
+
+Our API uses `callback_url`, `success_url` and `cancel_url`, but while using Omnipay library you should use `notifyUrl`, `returnUrl` and `cancelUrl`.
+
+Correct matches would be:
+
+```
+callback_url => notifyUrl
+success_url  => returnUrl
+cancel_url   => cancelUrl
+```
+
 ## Support
 
 If you are having general issues with Omnipay, we suggest posting on
