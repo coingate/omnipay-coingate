@@ -4,8 +4,8 @@ namespace Omnipay\CoinGate\Message;
 
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
-    protected $liveEndpoint = 'https://coingate.com/api/v1';
-    protected $testEndpoint = 'https://sandbox.coingate.com/api/v1';
+    protected $liveEndpoint = 'https://api.coingate.com/v1';
+    protected $testEndpoint = 'https://api-sandbox.coingate.com/v1';
 
     public function getAppId()
     {
