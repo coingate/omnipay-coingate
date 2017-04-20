@@ -11,6 +11,10 @@ processing library for PHP 5.3+. This package implements CoinGate support for Om
 
 ## Installation
 
+Sign up for CoinGate account at <https://coingate.com> for production and <https://sandbox.coingate.com> for testing (sandbox) environment.
+
+Please note, that for "Test" mode you must generate separate API credentials on <https://sandbox.coingate.com>. API credentials generated on <https://coingate.com> will not work for "Test" mode.
+
 Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply add it
 to your `composer.json` file:
 
