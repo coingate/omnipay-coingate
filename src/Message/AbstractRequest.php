@@ -7,16 +7,6 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     protected $liveEndpoint = 'https://api.coingate.com/v2';
     protected $testEndpoint = 'https://api-sandbox.coingate.com/v2';
 
-    public function getAppId()
-    {
-        return $this->getParameter('appId');
-    }
-
-    public function setAppId($value)
-    {
-        return $this->setParameter('appId', $value);
-    }
-
     public function getApiKey()
     {
         return $this->getParameter('apiKey');
@@ -25,16 +15,6 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function setApiKey($value)
     {
         return $this->setParameter('apiKey', $value);
-    }
-
-    public function getApiSecret()
-    {
-        return $this->getParameter('apiSecret');
-    }
-
-    public function setApiSecret($value)
-    {
-        return $this->setParameter('apiSecret', $value);
     }
 
     public function getReceiveCurrency()
@@ -75,14 +55,9 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function sendData($data)
     {
         $body = $data ? http_build_query($data) : null;
-        $nonce = (int) (microtime(true) * 1e6);
-        $message = $nonce.$this->getAppId().$this->getApiKey();
-        $signature = hash_hmac('sha256', $message, $this->getApiSecret());
 
         $httpRequest = $this->httpClient->createRequest($this->getHttpMethod(), $this->getEndpoint(), null, $body);
-        $httpRequest->setHeader('Access-Key', $this->getApiKey());
-        $httpRequest->setHeader('Access-Nonce', $nonce);
-        $httpRequest->setHeader('Access-Signature', $signature);
+        $httpRequest->setHeader('Authorization', "Token " . $this->getApiKey());
 
         if ($this->getHttpMethod() == 'POST') {
             $httpRequest->setHeader('Content-Type', 'application/x-www-form-urlencoded');
