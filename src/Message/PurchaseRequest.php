@@ -10,8 +10,8 @@ class PurchaseRequest extends AbstractRequest
 
         $data = array();
         $data['order_id'] = $this->getTransactionId();
-        $data['price'] = $this->getAmount();
-        $data['currency'] = $this->getCurrency();
+        $data['price_amount'] = $this->getAmount();
+        $data['price_currency'] = $this->getCurrency();
         $data['receive_currency'] = $this->getReceiveCurrency();
         $data['callback_url'] = $this->getNotifyUrl();
         $data['success_url'] = $this->getReturnUrl();

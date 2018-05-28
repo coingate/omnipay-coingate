@@ -8,8 +8,8 @@ use Omnipay\Common\AbstractGateway;
  * CoinGate Gateway.
  *
  * @link https://developer.coingate.com/
-*/
-  
+ */
+
 class Gateway extends AbstractGateway
 {
     public function getName()
@@ -20,22 +20,10 @@ class Gateway extends AbstractGateway
     public function getDefaultParameters()
     {
         return array(
-            'appId' => '',
             'apiKey' => '',
-            'apiSecret' => '',
             'receiveCurrency' => 'EUR',
             'testMode' => false,
         );
-    }
-
-    public function getAppId()
-    {
-        return $this->getParameter('appId');
-    }
-
-    public function setAppId($value)
-    {
-        return $this->setParameter('appId', $value);
     }
 
     public function getApiKey()
@@ -46,16 +34,6 @@ class Gateway extends AbstractGateway
     public function setApiKey($value)
     {
         return $this->setParameter('apiKey', $value);
-    }
-
-    public function getApiSecret()
-    {
-        return $this->getParameter('apiSecret');
-    }
-
-    public function setApiSecret($value)
-    {
-        return $this->setParameter('apiSecret', $value);
     }
 
     public function getReceiveCurrency()
