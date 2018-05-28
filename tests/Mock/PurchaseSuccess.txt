@@ -11,4 +11,4 @@ Cache-Control: no-cache
 X-Request-Id: d5c5b0a1-9e30-46c3-9650-492bcbfe5ace
 X-Runtime: 0.004236
 
-{"id":"855","currency":"USD","bitcoin_uri":"bitcoin:n31MPsoxUTM2tE8AwwbEusCBuTP8GoXtM4?amount=0.01714825","status":"pending","created_at":"2016-08-30T11:02:19+00:00","expire_at":"2016-08-30T11:12:19+00:00","bitcoin_address":"n31MPsoxUTM2tE8AwwbEusCBuTP8GoXtM4","order_id":"888","price":"10","btc_amount":"0.01714825","payment_url":"https://sandbox.coingate.com/invoice/9ec86b7c-842f-4abe-87cc-7d62d308d0ba"}
+{"id":"855","bitcoin_uri":"bitcoin:n31MPsoxUTM2tE8AwwbEusCBuTP8GoXtM4?amount=0.01714825","status":"pending","created_at":"2016-08-30T11:02:19+00:00","expire_at":"2016-08-30T11:12:19+00:00","bitcoin_address":"n31MPsoxUTM2tE8AwwbEusCBuTP8GoXtM4","order_id":"888","price_amount":"10","price_currency":"USD","pay_amount":"0.01714825","pay_currency":"BTC","payment_url":"https://sandbox.coingate.com/invoice/9ec86b7c-842f-4abe-87cc-7d62d308d0ba"}

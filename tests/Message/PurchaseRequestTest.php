@@ -26,8 +26,8 @@ class PurchaseRequestTest extends TestCase
     {
         $data = $this->request->getData();
 
-        $this->assertSame('10.00', $data['price']);
-        $this->assertSame('USD', $data['currency']);
+        $this->assertSame('10.00', $data['price_amount']);
+        $this->assertSame('USD', $data['price_currency']);
         $this->assertSame('Coffee Shop', $data['title']);
         $this->assertSame('3xCoffee', $data['description']);
         $this->assertSame('https://www.example.com/notify', $data['callback_url']);
@@ -41,7 +41,7 @@ class PurchaseRequestTest extends TestCase
 
         $request = $this->request;
 
-        $request->setApiSecret('test');
+        $request->setApiKey('test');
 
         $response = $request->send();
 
@@ -52,9 +52,9 @@ class PurchaseRequestTest extends TestCase
     public function testGetEndpoint()
     {
         $this->request->setTestMode(false);
-        $this->assertSame('https://coingate.com/api/v1/orders', $this->request->getEndpoint());
+        $this->assertSame('https://api.coingate.com/v2/orders', $this->request->getEndpoint());
 
         $this->request->setTestMode(true);
-        $this->assertSame('https://sandbox.coingate.com/api/v1/orders', $this->request->getEndpoint());
+        $this->assertSame('https://api-sandbox.coingate.com/v2/orders', $this->request->getEndpoint());
     }
 }
