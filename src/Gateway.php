@@ -55,4 +55,8 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest('\Omnipay\CoinGate\Message\PurchaseStatusRequest', $parameters);
     }
+    
+    public function checkout(array $parameters = array()){
+        return $this->createRequest('\Omnipay\CoinGate\Message\CheckoutRequest', $parameters);
+    }
 }
