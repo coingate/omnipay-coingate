@@ -27,6 +27,21 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('receiveCurrency', $value);
     }
 
+    public function getPayCurrency()
+    {
+        return $this->getParameter('payCurrency');
+    }
+
+    public function setPayCurrency($value)
+    {
+        return $this->setParameter('payCurrency', $value);
+    }
+
+    public function getId()
+    {
+        return $this->getParameter('transactionReference');
+    }
+
     public function setId($value)
     {
         return $this->setParameter('transactionReference', $value);
